@@ -21,7 +21,8 @@ edit.addEventListener('keyup', () => {
 });
 
 document.onkeyup = function(e) {
-	if (e.ctrlKey && e.which == 88) {
+	if (e.ctrlKey && e.key == 'x') {
+		init();
 		if (consl.classList.contains("hide")) {
 			edit.focus();
 			consl.blur();
@@ -32,13 +33,13 @@ document.onkeyup = function(e) {
 			edit.blur();
 			consl.focus();
 			consl.classList.add("hide");
-			consl.style.display = "inline-block";
+			consl.style.display = "block";
 		}
 	}
-	};
+};
 
 edit.addEventListener('keydown', () => {
-		var event = window.event;
+	var event = window.event;
     var keypress = (event.keyCode) ? event.keyCode : event.which;
     var keyvalue = String.fromCharCode(keypress).toLowerCase();
 		var key = keypress;

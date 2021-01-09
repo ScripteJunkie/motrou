@@ -17,7 +17,6 @@ html, body {
 
 body {
 	background: var(--color-primary);
-	color: var(--color-font);
 	position: relative;
 }
 
@@ -40,16 +39,21 @@ body {
 
 #cons {
 	min-height: 10px;
-	width: 100%;
+	width: 50%;
+  	margin: 0 auto;
 	display: none;
 	background-color: rgb(77, 77, 77);
-	position: fixed;
+	border-radius: 1rem;
+	position: relative;
 	z-index: 5;
-	padding: 20px;
-	font-size: 15px;
+	padding: 1.5rem;
+	font-size: 1.5rem;
 	color: white;
 	font-weight: 400;
 	font-family: 'Montserrat', sans-serif;
+	box-shadow: 0rem 0rem 1rem #888888;
+	margin-top: 15rem;
+	outline: none;
 }
 
 #dark {
@@ -98,13 +102,15 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	z-index: 3;
 	background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-	background: none;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	color: #f7d1ba;
 	border-radius: 0rem 0rem 2rem 2rem;
 	cursor: pointer;
 	text-align: center;
 	width: 50%;
-  	margin: 0 auto;
+	margin: 0 auto;
+	position: relative;
+	display: none;
 }
 
 #menu, #menuarea {
