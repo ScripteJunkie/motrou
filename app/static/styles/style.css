@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');*/
+
+:root {
+	--color-primary: #ffffff;
+	--color-font: #000000;
+}
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow-y: visible;
+	overflow-x: hidden;
+}
+
+body {
+	background: var(--color-primary);
+	color: var(--color-font);
+	position: relative;
+}
+
+#editor {
+	background: var(--color-primary);
+	color: var(--color-font);
+	min-height: calc(100% - 2in);
+	width: calc(100% - 2in);
+	padding-top: 1in;
+	padding-left: 1in;
+	padding-right: 1in;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	z-index: 1;
+	margin-bottom: 1in;
+	position: absolute;
+	outline: none;
+	word-wrap: break-word;
+}
+
+#cons {
+	min-height: 10px;
+	width: 100%;
+	display: none;
+	background-color: rgb(77, 77, 77);
+	position: fixed;
+	z-index: 5;
+	padding: 20px;
+	font-size: 15px;
+	color: white;
+	font-weight: 400;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#dark {
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	background: linear-gradient(to right,  white 0%, white 50%, black 50%, black 100%);
+	box-shadow: 0px 2px 2px 2px rgba(114, 114, 114, 0.185);
+	z-index: 3;
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+}
+
+#
+
+.card {
+	height: 1in;
+	width: 1in;
+	display: inline-block;
+	margin: 0.5in;
+	z-index: 3;
+	background: white;
+	color: black;
+	border-radius: 0.25in;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
+	text-align: center;
+	user-select: none;
+}
+
+.dark {
+	background: black;
+	color: white;
+}
+
+
+.gruv {
+	background: #282828;
+	color: #ebdab4;
+}
+
+#init {
+	height: 10rem;
+	padding: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	z-index: 3;
+	background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: none;
+	color: #f7d1ba;
+	border-radius: 0rem 0rem 2rem 2rem;
+	cursor: pointer;
+	text-align: center;
+	width: 50%;
+  	margin: 0 auto;
+}
+
+#menu, #menuarea {
+	height: 2rem;
+	width: 10rem;
+	border-radius: 0rem 0rem 0rem 1rem;
+	position: fixed;
+	right: 0;
+	z-index: 5;
+	cursor: pointer;
+}
+
+#menu {
+	border: grey 1px;
+	background: white;
+	display: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	color: #f7d1ba;
+	text-align: center;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+
+h1 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1rem;
+}
+
+h1, h2 {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #f7d1ba;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+		-scrollbar-width: none; /* Firefox */
+  	-ms-overflow-style: none;  /* IE 10+ */
+		display: none;
+}
+
+.hide {
+	color: white;
+}
+
+
+#theme {
+	min-height: calc(100% - 2in);
+	width: calc(100% - 2in);
+	padding-top: 1in;
+	padding-left: 1in;
+	padding-right: 1in;
+	padding-bottom: 1in;
+	background: grey;
+	position: fixed;
+	z-index: 2;
+}
