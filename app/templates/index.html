@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" type="image/png" href="{{ url_for('static',filename='content/motrou.png') }}" />
-    <title>motrou</title>
-    <link href="{{ url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="{{ url_for('static',filename='content/motrou.png') }}" />
+		<title>motrou</title>
+		<link href="{{ url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
 		<input id="cons" contenteditable="true" aria-placeholder="/commands" placeholder="/commands"></input>
 		<div id="dark" onclick="swap()"></div>
 		<div id="menuarea"><div id="menu" onclick="report()">save</div></div>
-		<div id="editor" onclick="init()" contenteditable="true">
+		<input id="editor" onclick="init()" contenteditable="true">
 			&#60;
-		</div>
+		</input>
 		<div id="init" onclick="init()">
 			<h1>no work yet!</h1>
 			<br>
 			<h2>all work is saved locally and may be lost when browser is closed.</h2>
 		</div>
-    <script src="{{ url_for('static',filename='scripts/script.js') }}"></script>
-  </body>
+		<script src="{{ url_for('static',filename='scripts/script.js') }}"></script>
+	</body>
 </html>
