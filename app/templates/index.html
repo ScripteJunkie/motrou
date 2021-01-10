@@ -8,11 +8,11 @@
     <link href="{{ url_for('static',filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
   </head>
   <body>
-		<div id="cons" contenteditable="true"></div>
+		<input id="cons" contenteditable="true" aria-placeholder="/commands" placeholder="/commands"></input>
 		<div id="dark" onclick="swap()"></div>
 		<div id="menuarea"><div id="menu" onclick="report()">save</div></div>
-		<div id="theme"><div class="card">Light</div><div class="card dark">Dark</div><div class="card gruv">Gruv</div></div>
 		<div id="editor" onclick="init()" contenteditable="true">
+			&#60;
 		</div>
 		<div id="init" onclick="init()">
 			<h1>no work yet!</h1>

@@ -5,6 +5,7 @@
 :root {
 	--color-primary: #ffffff;
 	--color-font: #000000;
+	--disp: none;
 }
 
 html, body {
@@ -13,6 +14,7 @@ html, body {
 	height: 100%;
 	overflow-y: visible;
 	overflow-x: hidden;
+	display: block;
 }
 
 body {
@@ -39,21 +41,23 @@ body {
 
 #cons {
 	min-height: 10px;
-	width: 50%;
-  	margin: 0 auto;
-	display: none;
-	background-color: rgb(77, 77, 77);
+	display: var(--disp);
+	background-color: #888888;
 	border-radius: 1rem;
-	position: relative;
 	z-index: 5;
 	padding: 1.5rem;
 	font-size: 1.5rem;
 	color: white;
-	font-weight: 400;
+	font-weight: 600;
 	font-family: 'Montserrat', sans-serif;
 	box-shadow: 0rem 0rem 1rem #888888;
 	margin-top: 15rem;
 	outline: none;
+	border: none;
+	left: 50%;
+	position: absolute;
+	width: 50%;
+    transform: translate(-50%, 0);
 }
 
 #dark {
@@ -66,23 +70,6 @@ body {
 	position: fixed;
 	bottom: 5px;
 	right: 5px;
-}
-
-#
-
-.card {
-	height: 1in;
-	width: 1in;
-	display: inline-block;
-	margin: 0.5in;
-	z-index: 3;
-	background: white;
-	color: black;
-	border-radius: 0.25in;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bolder;
-	text-align: center;
-	user-select: none;
 }
 
 .dark {
@@ -157,11 +144,6 @@ h1, h2 {
   	-ms-overflow-style: none;  /* IE 10+ */
 		display: none;
 }
-
-.hide {
-	color: white;
-}
-
 
 #theme {
 	min-height: calc(100% - 2in);

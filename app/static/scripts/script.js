@@ -22,19 +22,20 @@ edit.addEventListener('keyup', () => {
 
 document.onkeyup = function(e) {
 	if (e.ctrlKey && e.key == 'x') {
-		init();
-		if (consl.classList.contains("hide")) {
-			edit.focus();
-			consl.blur();
-			consl.classList.remove("hide");
-			consl.style.display = "none";
-		}
-		else {
-			edit.blur();
+		if (getComputedStyle(root).getPropertyValue("--disp") == 'none') {
+			root.style.setProperty("--disp", 'block');
 			consl.focus();
-			consl.classList.add("hide");
-			consl.style.display = "block";
 		}
+		else if (getComputedStyle(root).getPropertyValue("--disp") == 'block') {
+			root.style.setProperty("--disp", 'none');
+			edit.focus();
+			consl.value = "";
+		}
+	}
+	if (e.key == 'Escape') {
+		root.style.setProperty("--disp", 'none');
+		edit.focus();
+		consl.value = "";
 	}
 };
 
@@ -113,7 +114,7 @@ editor.addEventListener("paste", function(e) {
 function init() {
 	setCookie('check', 'true');
 	start.style.display = "none";
-	consl.style.display = "none";
+	root.style.setProperty("--disp", 'none');
 }
 
 function countWords(str) {
@@ -129,10 +130,8 @@ function countWords(str) {
 function report() {
 	// update content
 	setCookie('content', edit.innerHTML);
-	//console.log(edit.innerHTML);
-	console.log("saved" + " len: " + countWords(edit.innerHTML));
+	//console.log("saved" + " len: " + countWords(edit.innerHTML));
 }
-
 
 function setReport() {
 	// load cookies
@@ -140,7 +139,7 @@ function setReport() {
 	var check = getCookie('check');
 	var theme = getCookie('theme');
 	edit.innerHTML = call;
-	document.getElementById("theme").style.display="none";
+	edit.focus();
 	if (check != 'true') {
 		start.style.display = "block";
 		console.log('Start typing...');
