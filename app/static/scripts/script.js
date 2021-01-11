@@ -56,14 +56,14 @@ document.onkeydown = function(e) {
 		root.style.setProperty("--disp", 'none');
 		edit.focus();
 		consl.value = "";
-	} 
+	}
 };
 
 edit.addEventListener('keydown', () => {
 	var event = window.event;
-    var keypress = (event.keyCode) ? event.keyCode : event.which;
+	var keypress = (event.keyCode) ? event.keyCode : event.which;
     var keyvalue = String.fromCharCode(keypress).toLowerCase();
-		var key = keypress;
+	var key = keypress;
 		if (keypress != 17) {
 			report();
 			if (key == 90) { //undo
@@ -159,10 +159,12 @@ function setReport() {
 	var check = getCookie('check');
 	var theme = getCookie('theme');
 	edit.innerHTML = call;
-	edit.focus();
 	if (check != 'true') {
 		start.style.display = "block";
 		console.log('Start typing...');
+	}
+	if (check == 'true') {
+		edit.focus();
 	}
 	if (theme == 'dark') {
 		root.style.setProperty("--color-primary", 'black');
@@ -173,3 +175,4 @@ function setReport() {
 
 // load page
 edit.addEventListener("load", setReport());
+
