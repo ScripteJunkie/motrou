@@ -14,13 +14,33 @@ const remem = []
 
 var delay;
 
+function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'static/content/ascii.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+	xobj.send(null);  
+ }
+
+ loadJSON(function(response) {
+	// Parse JSON string into object
+	  var actual_JSON = JSON.parse(response);
+	  console.log(actual_JSON);
+   });
+
 //on keyup, start the countdown
 edit.addEventListener('keyup', () => {
 		clearTimeout(delay);
 		delay = setTimeout(report, 00);
 });
 
-document.onkeyup = function(e) {
+document.onkeydown = function(e) {
 	if (e.ctrlKey && e.key == 'x') {
 		if (getComputedStyle(root).getPropertyValue("--disp") == 'none') {
 			root.style.setProperty("--disp", 'block');
@@ -41,9 +61,9 @@ document.onkeyup = function(e) {
 
 edit.addEventListener('keydown', () => {
 	var event = window.event;
-    var keypress = (event.keyCode) ? event.keyCode : event.which;
+	var keypress = (event.keyCode) ? event.keyCode : event.which;
     var keyvalue = String.fromCharCode(keypress).toLowerCase();
-		var key = keypress;
+	var key = keypress;
 		if (keypress != 17) {
 			report();
 			if (key == 90) { //undo
@@ -139,10 +159,12 @@ function setReport() {
 	var check = getCookie('check');
 	var theme = getCookie('theme');
 	edit.innerHTML = call;
-	edit.focus();
 	if (check != 'true') {
 		start.style.display = "block";
 		console.log('Start typing...');
+	}
+	if (check == 'true') {
+		edit.focus();
 	}
 	if (theme == 'dark') {
 		root.style.setProperty("--color-primary", 'black');
@@ -153,3 +175,4 @@ function setReport() {
 
 // load page
 edit.addEventListener("load", setReport());
+
