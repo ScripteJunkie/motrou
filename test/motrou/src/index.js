@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Swap from './Swap'
+import Swap from './Swap';
+import Split from './Split';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <Swap />
+    <Split />
   </React.StrictMode>,
   document.getElementById('root')
 );

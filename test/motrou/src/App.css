@@ -46,9 +46,6 @@ body {
 	color: var(--color-font);
 	height: calc(100% - 2in);
 	width: calc(100% - 2in);
-	padding-top: 1in;
-	padding-left: 1in;
-	padding-right: 1in;
 	z-index: 1;
 }
 
@@ -68,7 +65,17 @@ div.public-DraftEditor-content {
 	height: calc(100% - 0in);
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none; /* IE 10+ */
+	padding: 1in;
 }
 div.DraftEditor-editorContainer{
-	height: 100%;
+	height: calc(100% - 1in);
+}
+
+.split {
+	position: absolute;
+	height: 1in;
+	width: 100%;
+	background: blue;
+	display: inline-block;
+	bottom: 0;
 }
