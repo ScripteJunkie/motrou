@@ -75,7 +75,7 @@ div.DraftEditor-editorContainer{
 	position: absolute;
 	height: 1in;
 	width: 100%;
-	background: blue;
 	display: inline-block;
 	bottom: 0;
+	box-shadow: 0 8px 6px 7px rgba(126, 126, 126, 0.5);
 }
