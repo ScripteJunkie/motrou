@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Swap from './Swap';
-import Split from './Split';
-import reportWebVitals from './reportWebVitals';
+import App from './components/Editor/App';
+import Swap from './components/Swap/Swap';
+import Split from './components/Split/Split';
+import reportWebVitals from './tests/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>

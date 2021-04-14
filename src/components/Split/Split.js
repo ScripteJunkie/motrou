@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Split.css';
 
 export default class Split extends Component {
   constructor(props) {
