@@ -1,8 +1,26 @@
 .split {
 	position: absolute;
-	height: 1in;
 	width: 100%;
 	display: inline-block;
 	bottom: 0;
 	/*box-shadow: 0 8px 6px 7px rgba(126, 126, 126, 0.5);*/
+}
+
+@media only screen and (min-width: 1023px) {
+	.split {
+		height: 1in;
+	}
+}
+
+
+@media only screen and (min-width: 1023px) {
+	.split {
+		height: 0.25in;
+	}
+}
+
+@media only print {
+	.split {
+		height: 0in;
+	}
 }
