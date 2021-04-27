@@ -55,10 +55,15 @@ div.public-DraftEditor-content {
 	div.DraftEditor-editorContainer{
 		height: calc(100% - 1in);
 		padding: 1in;
+		padding-bottom: 0;
+		padding-top: 0;
 	}
 	.editor {
-		height: calc(100% - 2in);
+		height: calc(100% - 1in);
 		width: calc(100% - 2in);
+	}
+	#margin {
+		height: 1in;
 	}
 }
 
@@ -66,10 +71,15 @@ div.public-DraftEditor-content {
 	div.DraftEditor-editorContainer{
 		height: calc(100% - 0.25in);
 		padding: 0.25in;
+		padding-bottom: 0;
+		padding-top: 0;
 	}
 	.editor {
 		height: calc(100% - 0.25in);
 		width: calc(100% - 0.25in);
+	}
+	#margin {
+		height: 0.25in;
 	}
 }
 

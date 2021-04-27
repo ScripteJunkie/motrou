@@ -49,6 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="editor">
+        <div id="margin"></div>
         <Editor
           editorState={this.state.editorState}
           onChange={this.onChange}

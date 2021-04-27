@@ -1,0 +1,77 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	overflow-y: visible;
+	overflow-x: hidden;
+	display: block;
+}
+
+body {
+	background: var(--color-primary);
+	position: relative;
+}
+
+:root {
+	--color-primary: #ffffff;
+	--color-accent: ##F0F0F0;
+	--color-font: #000000;
+	--disp: none;
+	--height: 10rem;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+	scrollbar-width: none; /* Firefox */
+  	-ms-overflow-style: none;  /* IE 10+ */
+	display: none;
+}
+
+.documents {
+	position: relative;
+	display: block;
+	background: var(--color-primary);
+	/*box-shadow: 0px 0px 4px 4px var(--color-shadow);*/
+	border-radius: 15px;
+	border: 1px solid var(--color-font);
+	z-index: 5;
+}
+
+.close {
+	position: absolute;
+	height: 2px;
+	width: 10px;
+	background-color: var(--color-font);
+	margin: 15px;
+	right: 0;	
+	cursor: pointer;
+	float: right;
+}
+
+
+@media only screen and (min-width: 1023px) {
+	.documents {
+		width: 200px;
+		height: 100px;
+		left: 15px;
+		top: 15px;
+		margin-top: 15px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.documents {
+		width: 200px;
+		height: 100px;
+		right: 15px;
+		top: 15px;
+		margin-top: 15px;
+	}
+}
+
+@media only print {
+	.documents {
+		display: none;
+	}
+}

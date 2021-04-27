@@ -11,10 +11,12 @@ export default class Swap extends Component {
         const theme = window.localStorage.getItem('theme');
         if (theme === "dark") {
             root.style.setProperty("--color-primary", 'black');
+            root.style.setProperty("--color-accent", '#131313');
             root.style.setProperty("--color-font", 'white');
             themeColor = 'dark';
         } else {
             root.style.setProperty("--color-primary", 'white');
+            root.style.setProperty("--color-accent", '#F0F0F0');
             root.style.setProperty("--color-font", 'black');
             themeColor = 'light';
         }
@@ -23,11 +25,13 @@ export default class Swap extends Component {
         // light or dark theme
         if (themeColor === 'dark') {
             root.style.setProperty("--color-primary", 'white');
+            root.style.setProperty("--color-accent", '#F0F0F0');
             root.style.setProperty("--color-font", 'black');
             this.saveTheme('light');
         }
         else {
             root.style.setProperty("--color-primary", 'black');
+            root.style.setProperty("--color-accent", '#131313');
             root.style.setProperty("--color-font", 'white');
             this.saveTheme('dark');
         }
