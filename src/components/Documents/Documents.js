@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import './Documents.css';
-let root = document.getElementById("doc");
 
 export default class Documents extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {
+      cardVisible: true,
+      display: "hidden",
+     };
   }
-    handleClick = () => {
-      // minimize
-      root.style.setProperty("height", '15px');
-      root.style.setProperty("width", '15px');
-    };
+    handleClick = () => this.setState(state => ({
+      cardVisible: !state.cardVisible,
+    }));
+
   render() {
     return (
-      <div id="doc" className="documents">
+      <div id="doc" display={this.state.display} className="documents">
         <div className="close" onClick={this.handleClick}></div>
       </div>
     );

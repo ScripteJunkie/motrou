@@ -29,13 +29,13 @@ body {
 }
 
 .documents {
-	position: relative;
 	display: block;
 	background: var(--color-primary);
 	/*box-shadow: 0px 0px 4px 4px var(--color-shadow);*/
 	border-radius: 15px;
 	border: 1px solid var(--color-font);
 	z-index: 5;
+	padding: 15px;
 }
 
 .close {

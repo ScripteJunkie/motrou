@@ -3,15 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/Editor/App';
 import Swap from './components/Swap/Swap';
-import Documents from './components/Documents/Documents';
+//import Documents from './components/Documents/Documents';
 //import Split from './components/Split/Split';
 import reportWebVitals from './tests/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Documents />
-    <Documents />
-    <Documents />
     <App />
     <Swap />
   </React.StrictMode>,
