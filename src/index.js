@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/Editor/App';
 import Swap from './components/Swap/Swap';
+import Console from './components/Console/Console';
 //import Documents from './components/Documents/Documents';
 //import Split from './components/Split/Split';
-import reportWebVitals from './tests/reportWebVitals';
+//import reportWebVitals from './tests/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Console />
     <App />
     <Swap />
   </React.StrictMode>,
@@ -18,4 +20,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//reportWebVitals();

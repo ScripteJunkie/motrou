@@ -44,9 +44,7 @@ export default class Swap extends Component {
 
   render() {
     return (
-      <div className="border">
       <div className="swap" onClick={this.handleClick}></div>
-      </div>
     );
   }
 }
