@@ -6,8 +6,6 @@ import Swap from './components/Swap/Swap';
 import Console from './components/Console/Console';
 //import Documents from './components/Documents/Documents';
 //import Split from './components/Split/Split';
-//import reportWebVitals from './tests/reportWebVitals';
-
 ReactDOM.render(
   <React.StrictMode>
     <Console />
@@ -16,8 +14,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-//reportWebVitals();
