@@ -1,32 +1,3 @@
-html, body {
-	margin: 0px;
-	padding: 0px;
-	height: 100%;
-	overflow-y: visible;
-	overflow-x: hidden;
-	display: block;
-}
-
-body {
-	background: var(--color-primary);
-	position: relative;
-}
-
-:root {
-	--color-primary: #ffffff;
-	--color-font: #000000;
-	--disp: none;
-	--height: 10rem;
-}
-
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-	scrollbar-width: none; /* Firefox */
-  	-ms-overflow-style: none;  /* IE 10+ */
-	display: none;
-}
-
 .editor {
 	background: var(--color-primary);
 	color: var(--color-font);
@@ -39,8 +10,6 @@ div.DraftEditor-root {
 	color: var(--color-font);
 	height: inherit;
 	width: inherit;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 300;
 	position: absolute;
 	word-wrap: break-word;
 }
@@ -54,7 +23,7 @@ div.public-DraftEditor-content {
 
 @media only screen and (min-width: 1023px) {
 	div.DraftEditor-editorContainer{
-		height: calc(100% - 1in);
+		height: calc(100% - 0in);
 		padding: 1in;
 		padding-bottom: 0;
 		padding-top: 0;
