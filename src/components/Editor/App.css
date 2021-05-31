@@ -3,13 +3,14 @@
 	color: var(--color-font);
 	z-index: 1;
 	position: fixed;
+	font-family: 'Montserrat', sans-serif;
 }
 
 div.DraftEditor-root {
 	background: var(--color-primary);
 	color: var(--color-font);
 	height: inherit;
-	width: inherit;
+	width: 100%;
 	position: absolute;
 	word-wrap: break-word;
 }
@@ -39,10 +40,10 @@ div.public-DraftEditor-content {
 
 @media only screen and (max-width: 1024px) {
 	div.DraftEditor-editorContainer{
-		height: calc(100% - 0.25in);
+		height: calc(100% - 0.24in);
 		padding: 0.25in;
 		padding-bottom: 0;
-		padding-top: 0;
+		padding-top: 0.25in;
 	}
 	.editor {
 		height: calc(100% - 0.25in);

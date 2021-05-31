@@ -7,9 +7,9 @@ import Console from './components/Console/Console';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Console />
     <App />
     <Swap />
+    <Console />
   </React.StrictMode>,
   document.getElementById('root')
 );
