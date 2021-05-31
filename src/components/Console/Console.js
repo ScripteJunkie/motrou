@@ -18,6 +18,14 @@ export default class Documents extends Component {
         document.getElementById("console").focus();
     }
     };
+
+    document.body.addEventListener('click', function (event) {
+      if (document.getElementById("console-cont").contains(event.target)) {
+      } else {
+        document.getElementById("console").value = "";
+        root.style.setProperty("--disp", 'none');
+            }
+  });
   }
 
   onChange = editorState => {const contentState = editorState.getCurrentContent(); this.sendQue(contentState); this.setState({editorState})};
@@ -42,7 +50,7 @@ export default class Documents extends Component {
         var entry = document.createElement('li');
         entry.style.display = "grid";
         link.appendChild(document.createTextNode("all"));
-        link.href = "http://example.com";
+        link.href = "/";
         entry.appendChild(link);
         ul.appendChild(entry);
         ul.style.display = "grid";
@@ -73,13 +81,14 @@ export default class Documents extends Component {
           <input id="console" type="text" contentEditable="true" aria-placeholder="Use a component or /commands" placeholder="Use a component or /commands" autoFocus autoComplete="off" onChange={this.sendQue}></input>
           <h1>Hello {this.state.username}</h1>
           <ul id="options">
-            <li><a href="http://localhost:3000/">Adele</a></li>
-            <li><a href="http://localhost:3000/">Agnes</a></li>
-            <li><a href="http://localhost:3000/">Billy</a></li>
-            <li><a href="http://localhost:3000/">Bob</a></li>
-            <li><a href="http://localhost:3000/">Calvin</a></li>
-            <li><a href="http://localhost:3000/">Christina</a></li>
-            <li><a href="http://localhost:3000/">Cindy</a></li>
+            <li><a href="./404.html">/themes (WIP)</a></li>
+            <li><a href="./404.html">/login (WIP)</a></li>
+            <li><a href="./404.html">/files (WIP)</a></li>
+            <li><a href="./404.html">/import (WIP)</a></li>
+            <li><a href="./404.html">/export (WIP)</a></li>
+            <li><a href="./404.html">/toolbox (WIP)</a></li>
+            <li><a href="./404.html">/commands (WIP)</a></li>
+            <li><a href="./404.html">/all (WIP)</a></li>
           </ul>
         </form>
     );
