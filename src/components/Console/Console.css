@@ -18,7 +18,7 @@ form {
 	color: var(--color-font);
 	outline: none;
 	border: none;
-	z-index: 2;
+	z-index: 3;
 }
 
 h1 {
@@ -51,8 +51,8 @@ h1 {
 	padding: 1.25rem;
 	padding-left: 1.5rem;
 	position: absolute;
-	padding-top: 2vh;
-	margin-top: 40vh;
+	padding-top: 3vh;
+	top: 33vh;
 	z-index: 2;
   }
   

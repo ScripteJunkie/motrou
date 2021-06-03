@@ -20,7 +20,7 @@ export default class Documents extends Component {
     };
 
     document.body.addEventListener('click', function (event) {
-      if (document.getElementById("console-cont").contains(event.target)) {
+      if (document.getElementById("console").contains(event.target) || document.getElementById("options").contains(event.target)) {
       } else {
         document.getElementById("console").value = "";
         root.style.setProperty("--disp", 'none');
