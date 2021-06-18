@@ -10,7 +10,7 @@ div.DraftEditor-root {
 	background: var(--color-primary);
 	color: var(--color-font);
 	height: inherit;
-	width: 100%;
+	width: 100vw;
 	position: absolute;
 	word-wrap: break-word;
 }
@@ -29,28 +29,32 @@ div.public-DraftEditor-content {
 		padding-bottom: 0;
 		padding-top: 0;
 	}
-	.editor {
-		height: calc(100% - 1in);
-		width: calc(100% - 2in);
+	div.public-DraftEditor-content {
+		height: calc(100% - 2in); 
+		padding-top: 1in;
+		padding-bottom: 1in;
 	}
-	#margin {
-		height: 1in;
+	.editor {
+		height: 100%;
+		width: calc(100% - 2in);
 	}
 }
 
 @media only screen and (max-width: 1024px) {
 	div.DraftEditor-editorContainer{
-		height: calc(100% - 0.24in);
 		padding: 0.25in;
 		padding-bottom: 0;
+		padding-top: 0.5in;
+		height: 100%;
+	}
+	div.public-DraftEditor-content {
+		height: calc(100% - 0.5in);
 		padding-top: 0.25in;
+		padding-bottom: 0.25in;
 	}
 	.editor {
-		height: calc(100% - 0.25in);
-		width: calc(100% - 0.25in);
-	}
-	#margin {
-		height: 0.25in;
+		height: calc(100% - 0.5in);
+		width: 100%;
 	}
 }
 
@@ -63,4 +67,74 @@ div.public-DraftEditor-content {
 		height: 100%;
 		width: 100%;
 	}
+}
+/* 
+::selection {
+  background: #ffb7b7; 
+}
+::-moz-selection {
+  background: #ffb7b7; 
+} */
+
+
+
+
+#styling {
+	height: 200px;
+	width: 50px;
+	border-radius: 15px;
+	background: var(--color-accent);
+	z-index: 2;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	text-align: center;
+	display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+	#styling {
+		top: 5px;
+		left: 5px;
+		height: 50px;
+		width: 200px;
+	}
+	.material-icons {
+		color: var(--color-font);
+		cursor: pointer;
+		line-height: 0;
+		font-size: 20px;
+	}
+
+	#buttons {
+		margin-top: 0px;
+	}
+	
+	button {
+		padding: 10px;
+		width: 30px;
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 1023px) {
+
+#buttons {
+	margin-top: 15px;
+}
+
+}
+
+.material-icons {
+	color: var(--color-font);
+	cursor: pointer;
+	line-height: 0;
+}
+
+button {
+	background: none;
+	border: none;
+	text-align: center;
+	padding: 10px;
+	height: 15px;
 }

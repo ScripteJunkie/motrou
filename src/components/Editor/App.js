@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Editor, EditorState} from 'draft-js'
+import {Editor, EditorState, RichUtils} from 'draft-js'
 import './App.css';
 import {convertToRaw, convertFromRaw} from 'draft-js';
-// let root = document.documentElement;
 
 class App extends Component {
   constructor(props) {
@@ -11,61 +10,115 @@ class App extends Component {
   
     const content = window.localStorage.getItem('content');
 
-    // this.handleKeyCommand = this.handleKeyCommand.bind(this);
-  
     if (content) {
       this.state.editorState = EditorState.createWithContent(convertFromRaw(JSON.parse(content)));
     } else {
       this.state.editorState = EditorState.createEmpty();
     }
-   
-  // document.onkeydown = keyDownEvent;
-  // function keyDownEvent(e) {
-  //   if (e.ctrlKey && e.key === 'x') {
-  //     e.preventDefault();
-  //     root.style.setProperty("--disp", 'block');
-  // }
-  // };
   }
   
-  onChange = editorState => {const contentState = editorState.getCurrentContent(); this.saveContent(contentState); this.setState({editorState})};
-
-  // keyBindingFn = (event) => {
-  //   if (KeyBindingUtil.hasCommandModifier(event) && event.keyCode === 75) {event.preventDefault(); return 'bbbold';}
-  //   if (event.keyCode === 88) {event.preventDefault(); console.log("TAB"); return 'tab';}
-  //   return getDefaultKeyBinding(event);
-  // }
-
-  // handleKeyCommand = (command) => {
-  //   let newState;
-  //   if (command === 'bbbold') {
-  //     newState = RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD');
-  //   }
-
-  //   if (command === 'tab') {
-  //      newState = RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD');
-  //   }
-
-  //   if (newState) {
-  //     this.setState({ editorState: newState });
-  //     return 'handled';
-  //   }
-  //   return 'not-handled';
-  // }
+  onChange = editorState => {const contentState = editorState.getCurrentContent(); this.saveContent(contentState); this.setState({editorState})
+  if (document.activeElement.className === 'notranslate public-DraftEditor-content') {
+    document.getElementById('styling').style.display = "flex";
+  }
+  else {
+    document.getElementById('styling').style.display = "none";
+  }
+};
 
   saveContent = (content) => {
     window.localStorage.setItem('content', JSON.stringify(convertToRaw(content)));
   }
 
+
+  // handleKeyCommand(e) {
+  //     if (e.keyCode === 9 /* TAB */) {
+  //       e.preventDefault();
+  //       const newEditorState = RichUtils.onTab(
+  //         e,
+  //         this.state.editorState,
+  //         4, /* maxDepth */
+  //       );
+  //       if (newEditorState !== this.state.editorState) {
+  //         this.onChange(newEditorState);
+  //       }
+  //       return;
+  //     }
+  //     return;
+  // }
+
+
+
+  _onBoldClick() {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'));
+  }
+
+  _onItalicClick() {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'ITALIC'));
+  }
+
+  _onUnderlineClick() {
+    this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'));
+  }
+
+  _onListClick() {
+    this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'unordered-list-item'));
+  }
+
+  _onTitleClick() {
+    this.onChange(RichUtils.toggleBlockType(this.state.editorState, 'header-two'));
+  }
+
+  _onSearchClick() {
+    document.documentElement.style.setProperty("--disp", 'flex');
+  }
+
+  onTogglePopover = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <div className="editor">
-        <div id="margin"></div>
+        <div id="styling">
+          <div id="buttons">
+            <button onMouseDown={this.onTogglePopover} onClick={this._onBoldClick.bind(this)}>
+              <span className="material-icons">
+                format_bold
+              </span>
+            </button>
+            <button onMouseDown={this.onTogglePopover} onClick={this._onItalicClick.bind(this)}>
+              <span class="material-icons">
+                format_italic
+              </span>
+            </button>
+            <button onMouseDown={this.onTogglePopover} onClick={this._onUnderlineClick.bind(this)}>
+              <span class="material-icons">
+                format_underlined
+              </span>
+            </button>
+            <button onMouseDown={this.onTogglePopover} onClick={this._onListClick.bind(this)}>
+              <span class="material-icons">
+                format_list_bulleted
+              </span>
+            </button>
+            <button onMouseDown={this.onTogglePopover} onClick={this._onTitleClick.bind(this)}>
+              <span className="material-icons">
+              title
+              </span>
+            </button>
+            <button onClick={this._onSearchClick.bind(this)}>
+              <br></br>
+              <span className="material-icons">
+              search
+              </span>
+            </button>
+          </div>
+        </div>
         <Editor
           editorState={this.state.editorState}
           onChange={this.onChange}
           // handleKeyCommand={this.handleKeyCommand}
-          // keyBindingFn={this.KeyBindingFn}
           />
       </div>
     );

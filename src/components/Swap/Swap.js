@@ -7,8 +7,9 @@ export default class Swap extends Component {
     constructor(props) {
         super(props);
         this.state = { };
-      
+     
         const theme = window.localStorage.getItem('theme');
+
         if (theme === "dark") {
             root.style.setProperty("--color-primary", 'black');
             root.style.setProperty("--color-accent", '#131313');
@@ -21,6 +22,7 @@ export default class Swap extends Component {
             themeColor = 'light';
         }
       }
+
     handleClick = () => {
         // light or dark theme
         if (themeColor === 'dark') {
@@ -44,7 +46,7 @@ export default class Swap extends Component {
 
   render() {
     return (
-      <div className="swap" onClick={this.handleClick}></div>
+      <div className="swap" onMouseDown={this.handleClick}></div>
     );
   }
 }
