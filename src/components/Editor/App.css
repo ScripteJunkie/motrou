@@ -68,6 +68,7 @@ div.public-DraftEditor-content {
 		width: 100%;
 	}
 }
+
 /* 
 ::selection {
   background: #ffb7b7; 
@@ -75,9 +76,6 @@ div.public-DraftEditor-content {
 ::-moz-selection {
   background: #ffb7b7; 
 } */
-
-
-
 
 #styling {
 	height: 200px;
@@ -87,7 +85,7 @@ div.public-DraftEditor-content {
 	z-index: 2;
 	position: fixed;
 	top: 5px;
-	right: 5px;
+	left: 5px;
 	text-align: center;
 	display: none;
 }
@@ -99,6 +97,7 @@ div.public-DraftEditor-content {
 		height: 50px;
 		width: 200px;
 	}
+
 	.material-icons {
 		color: var(--color-font);
 		cursor: pointer;
@@ -118,11 +117,9 @@ div.public-DraftEditor-content {
 }
 
 @media only screen and (min-width: 1023px) {
-
-#buttons {
-	margin-top: 15px;
-}
-
+	#buttons {
+		margin-top: 15px;
+	}
 }
 
 .material-icons {

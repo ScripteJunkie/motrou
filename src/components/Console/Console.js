@@ -88,6 +88,7 @@ export default class Documents extends Component {
             <li><a href="./404.html">/export (WIP)</a></li>
             <li><a href="./404.html">/toolbox (WIP)</a></li>
             <li><a href="./404.html">/commands (WIP)</a></li>
+            <li><a href="./tips.html">/tips (WIP)</a></li>
             <li><a href="./404.html">/all (WIP)</a></li>
           </ul>
         </form>

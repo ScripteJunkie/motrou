@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Editor, EditorState, RichUtils} from 'draft-js'
+import {Editor, EditorState, RichUtils, Modifier} from 'draft-js'
 import './App.css';
 import {convertToRaw, convertFromRaw} from 'draft-js';
 
@@ -29,25 +29,6 @@ class App extends Component {
   saveContent = (content) => {
     window.localStorage.setItem('content', JSON.stringify(convertToRaw(content)));
   }
-
-
-  // handleKeyCommand(e) {
-  //     if (e.keyCode === 9 /* TAB */) {
-  //       e.preventDefault();
-  //       const newEditorState = RichUtils.onTab(
-  //         e,
-  //         this.state.editorState,
-  //         4, /* maxDepth */
-  //       );
-  //       if (newEditorState !== this.state.editorState) {
-  //         this.onChange(newEditorState);
-  //       }
-  //       return;
-  //     }
-  //     return;
-  // }
-
-
 
   _onBoldClick() {
     this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'));
@@ -118,7 +99,6 @@ class App extends Component {
         <Editor
           editorState={this.state.editorState}
           onChange={this.onChange}
-          // handleKeyCommand={this.handleKeyCommand}
           />
       </div>
     );
